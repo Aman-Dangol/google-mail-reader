@@ -1,0 +1,52 @@
+#sidebar-content-container:has(section > #primary-account:checked)
+  > #priamry-account-container {
+  border-bottom-right-radius: 0.375rem;
+}
+
+#sidebar-content-container:has(section > #primary-account:not(:checked))
+  #email-aliases-header {
+  border-radius: none;
+}
+
+#sidebar-content-container:has(section > #primary-account:checked)
+  #email-aliases-header {
+  border-top-right-radius: 0.375rem;
+}
+
+#email-aliases-container:has(section > #business-account:checked)
+  #email-aliases-header {
+  border-bottom-right-radius: 0.375rem;
+}
+
+#email-aliases-container:has(section > #business-account:checked)
+  #news-letter-account-label {
+  border-top-right-radius: 0.375rem;
+}
+#email-aliases-container:has(section > #business-account:checked)
+  #email-aliases-header {
+  border-bottom-right-radius: 0.375rem;
+}
+
+#email-aliases-container:has(section > #business-account:checked)
+  #news-letter-account-label {
+  border-top-right-radius: 0.375rem;
+}
+
+#email-aliases-container:has(section > #news-letter-account:checked)
+  #business-account-label {
+  border-bottom-right-radius: 0.375rem;
+}
+
+#email-aliases-container:has(section > #news-letter-account:checked)
+  #shopping-account-label {
+  border-top-right-radius: 0.375rem;
+}
+
+#email-aliases-container:has(section > #shopping-account:checked)
+  #news-letter-account-label {
+  border-bottom-right-radius: 0.375rem;
+}
+
+#sidebar-content-container:has(section #shopping-account:checked) > #footer {
+  border-top-right-radius: 0.375rem;
+}

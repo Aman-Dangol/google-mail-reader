@@ -1,0 +1,7 @@
+.turbo
+.env
+
+.docker.env
+.vscode
+
+node_modules

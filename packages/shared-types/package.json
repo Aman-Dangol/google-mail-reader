@@ -1,0 +1,10 @@
+{
+  "name": "@repo/shared-types",
+  "exports": {
+    "./api/*": "./src/api/*.ts",
+    "./utils/*": "./src/utils/*.ts"
+  },
+  "dependencies": {
+    "googleapis": "^105.0.0"
+  }
+}

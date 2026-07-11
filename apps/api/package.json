@@ -1,0 +1,43 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "dotenvx run -- tsx watch src/index.ts",
+    "check-types": "tsc",
+    "build": "tsup",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.6.1",
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.51.0",
+    "@google-cloud/local-auth": "2.1.0",
+    "@prisma/client": "6.16.2",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "eslint": "^9.39.1",
+    "express": "^5.1.0",
+    "google-auth-library": "10",
+    "googleapis": "^105.0.0",
+    "jwt-decode": "^4.0.0",
+    "prisma": "^6.16.2",
+    "typescript": "^5.9.2",
+    "winston": "^3.18.3"
+  },
+  "devDependencies": {
+    "@repo/shared-types": "workspace:*",
+    "tsup": "^8.5.1",
+    "tsx": "^4.20.4"
+  }
+}

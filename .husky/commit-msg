@@ -1,0 +1,6 @@
+pnpm exec commitlint --edit "$1" || {
+  echo ""
+  echo "❌ Error: Invalid commit message!"
+  echo "💡 Tip: use fix: message or feat: message"
+  exit 1
+}

@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "./styles/sidebar.css";
+@import "./styles/animations.css";
+
+* {
+  font-family: "Open Sans", Arial;
+  box-sizing: border-box;
+}
+:root {
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #f6f6f6; /* f9f9f9*/
+  --color-fg-primary: #020202;
+}
+
+body {
+  @apply bg-bg-primary gap-2 text-fg-primary;
+}
+
+@theme inline {
+  --color-bg-primary: var(--color-bg-primary);
+  --color-bg-secondary: var(--color-bg-secondary); /* f9f9f9*/
+  --color-fg-primary: var(--color-fg-primary);
+}
+
+[data-theme="dark"] {
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #1a1a1a;
+  --color-fg-primary: #f9f9f9;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+.pop-up {
+  animation: popUp 0.3s ease;
+}

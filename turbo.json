@@ -1,0 +1,22 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "env": ["CLIENT_ID", "DATABASE_URL", "CLIENT_SECRET", "REDIRECT_URL"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "outputs": []
+    },
+    "dev": {
+      "dependsOn": ["^dev"],
+      "persistent": true,
+      "cache": false
+    }
+  }
+}
