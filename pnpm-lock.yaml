@@ -219,14 +219,10 @@ importers:
         version: 8.61.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
 
   packages/shared-types:
-    dependencies:
+    devDependencies:
       googleapis:
         specifier: ^105.0.0
         version: 105.0.0
-    devDependencies:
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
 
   packages/typescript-config: {}
 

@@ -4,7 +4,7 @@
     "./api/*": "./src/api/*.ts",
     "./utils/*": "./src/utils/*.ts"
   },
-  "dependencies": {
+  "devDependencies": {
     "googleapis": "^105.0.0"
   }
 }
