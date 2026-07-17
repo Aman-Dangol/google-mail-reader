@@ -32,6 +32,8 @@ const credentialSetter = async (
         secure: true,
       });
     } catch {
+      res.cookie("access_token", "");
+      res.cookie("refresh_token", "");
       res.status(401).json({ message: "failed to refresh token" });
       return;
     }

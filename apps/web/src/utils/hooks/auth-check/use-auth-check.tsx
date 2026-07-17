@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router";
 import { useCookies } from "react-cookie";
 import { useAuth } from "@src/utils/hooks/query-hooks/auth";
 
+//only use at one place
 export function useAuthCheck() {
   const [params] = useSearchParams();
   const code = params.get("code");

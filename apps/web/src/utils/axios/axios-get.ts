@@ -34,7 +34,6 @@ const useGet = <TQueryOutput = unknown, TQueryInput = unknown>({
       const response = await api.get(`${url}`, {
         params,
       });
-
       return response.data;
     },
     ...options,

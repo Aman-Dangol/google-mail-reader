@@ -5,7 +5,7 @@ import { Link } from "react-router";
 export default function Login() {
   const { data, isLoading, isError } = useGet<{ url: string }>({
     queryKey: ["google-login"],
-    url: "/getUrl",
+    url: "auth/getUrl",
   });
 
   if (isLoading) {

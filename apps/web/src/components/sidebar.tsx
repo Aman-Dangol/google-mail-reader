@@ -1,4 +1,5 @@
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { ProfilePicture } from "@src/components/profile-pic/profile-picture";
 import { Inbox } from "@src/icons/inbox";
 import { useUserInfoStore } from "@src/zustand/user-info";
 
@@ -40,7 +41,8 @@ export const Sidebar = () => {
           <p className="text-[16px] z-10 ">Primary Account</p>
         </section>
 
-        <section className="">
+        <section className="flex items-center">
+          {userInfo && <ProfilePicture userInfo={userInfo} />}
           <input
             hidden
             type="radio"
