@@ -1,8 +1,7 @@
 import { NavContext } from "@src/utils/context/nav-context";
 import { useContext } from "react";
-import type { Mail } from "@repo/shared-types/utils/api-mail-types";
 import { useGetAllMails } from "@src/utils/hooks/query-hooks/mails";
-import { nameEmailParser } from "@src/utils/helpers/email-name-parser";
+import { MailBox } from "@src/components/mail-box/mail-box";
 
 export default function MailPage() {
   const mailType = useContext(NavContext).currentTab;
@@ -20,17 +19,8 @@ export default function MailPage() {
   return (
     <div>
       {allMails?.map((mail) => (
-        <SingleMail {...mail} key={mail.id} />
+        <MailBox {...mail} key={mail.id} />
       ))}
     </div>
   );
 }
-
-const SingleMail = (mail: Mail) => {
-  const headerFrom = mail.payload?.headers?.find(
-    (item) => item.name === "From",
-  );
-  const { name } = nameEmailParser(headerFrom?.value ?? "");
-
-  return <div className="text-fg-primary">{name}</div>;
-};

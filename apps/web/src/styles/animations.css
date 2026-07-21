@@ -6,3 +6,21 @@
     transform: scale(1);
   }
 }
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0px;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0px;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}

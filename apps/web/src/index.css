@@ -16,6 +16,11 @@ body {
   @apply bg-bg-primary gap-2 text-fg-primary;
 }
 
+@theme {
+  --animate-slideDown: slideDown 300ms ease-out;
+  --animate-slideUp: slideUp 300ms ease-out;
+}
+
 @theme inline {
   --color-bg-primary: var(--color-bg-primary);
   --color-bg-secondary: var(--color-bg-secondary); /* f9f9f9*/
@@ -32,4 +37,11 @@ body {
 
 .pop-up {
   animation: popUp 0.3s ease;
+}
+
+.slideUp {
+  animation: slideUp 0.3s;
+}
+.slideDown {
+  animation: slideDown 0.3s;
 }
