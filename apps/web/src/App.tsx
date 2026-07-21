@@ -23,11 +23,13 @@ function App() {
 
   if (isAuthenticated && !isError) {
     return (
-      <main className="bg-bg-primary flex gap-2 text-fg-primary">
+      <main className="bg-bg-primary flex h-screen max-h-screen gap-2 text-fg-primary">
         <Sidebar />
-        <div className="h-screen flex-1 p-2">
+        <div className="flex-1 p-2 flex flex-col min-h-0">
           <Navbar />
-          <Outlet />
+          <section className="flex-1 min-h-0 overflow-hidden">
+            <Outlet />
+          </section>
         </div>
       </main>
     );

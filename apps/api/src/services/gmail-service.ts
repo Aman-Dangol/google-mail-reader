@@ -14,10 +14,12 @@ const queryMap: Record<MailType, string> = {
 // get mails based on the mail type
 export const getAllMails = async (
   mailType: MailType = "Inbox",
+  pageToken: string = "",
 ): Promise<gmail_v1.Schema$ListMessagesResponse> => {
   const res = await GmailService.users.messages.list({
     userId: "me",
     maxResults: 25,
+    pageToken,
     q: queryMap[mailType],
   });
 
