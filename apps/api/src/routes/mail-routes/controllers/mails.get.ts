@@ -9,13 +9,15 @@ import { Response } from "express";
 import type { MailType } from "@repo/shared-types/utils/api-mail-types";
 
 export const getMails = async (
-  req: CustomRequest<{ query: { mailType?: MailType } }>,
+  req: CustomRequest<{ query: { mailType?: MailType; pageToken: string } }>,
   res: Response,
 ) => {
   const mailType = req.query.mailType || "Inbox";
+  const pageToken = req.query.pageToken ?? "";
+
   logger.info("user tried to get mails", mailType);
 
-  const allMailsIdsList = await getAllMails(mailType);
+  const allMailsIdsList = await getAllMails(mailType, pageToken);
   const allMailIDs = allMailsIdsList.messages;
 
   const allMails = await Promise.all(

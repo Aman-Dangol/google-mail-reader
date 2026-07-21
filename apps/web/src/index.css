@@ -45,3 +45,16 @@ body {
 .slideDown {
   animation: slideDown 0.3s;
 }
+
+.scrollbar {
+  padding-right: 8px;
+}
+
+.scrollbar::-webkit-scrollbar {
+  background-color: var(--color-bg-primary);
+  width: 10px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-fg-primary);
+  border-radius: 999px;
+}

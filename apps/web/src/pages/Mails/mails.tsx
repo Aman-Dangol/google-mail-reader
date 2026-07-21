@@ -1,11 +1,26 @@
 import { NavContext } from "@src/utils/context/nav-context";
 import { useContext } from "react";
-import { useGetAllMails } from "@src/utils/hooks/query-hooks/mails";
+import { useGetAllMailInfiniteQuery } from "@src/utils/hooks/query-hooks/mails";
 import { MailBox } from "@src/components/mail-box/mail-box";
+import { useIniniteQueryloading } from "@src/utils/hooks/infinite-query-loader/infinite-query-loading-hooks";
 
 export default function MailPage() {
   const mailType = useContext(NavContext).currentTab;
-  const { data: mailsReponse, isLoading, isError } = useGetAllMails(mailType);
+
+  const {
+    data: mailsReponse,
+    isLoading,
+    isFetchingNextPage,
+    fetchNextPage,
+    hasNextPage,
+    isError,
+  } = useGetAllMailInfiniteQuery(mailType);
+
+  const { loaderElement } = useIniniteQueryloading({
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  });
 
   if (isError) {
     return <div>error</div>;
@@ -14,13 +29,14 @@ export default function MailPage() {
     return <div>content is Loading</div>;
   }
 
-  const allMails = mailsReponse?.data;
+  const allMails = mailsReponse?.pages.flatMap((data) => data.data);
 
   return (
-    <div>
+    <section className="overflow-auto h-full scrollbar">
       {allMails?.map((mail) => (
         <MailBox {...mail} key={mail.id} />
       ))}
-    </div>
+      {loaderElement}
+    </section>
   );
 }
