@@ -33,10 +33,12 @@ export default function MailPage() {
 
   return (
     <section className="overflow-auto h-full scrollbar">
-      {allMails?.map((mail) => (
-        <MailBox {...mail} key={mail.id} />
-      ))}
-      {loaderElement}
+      <section>
+        {allMails?.map((mail) => (
+          <MailBox {...mail} key={mail.id} />
+        ))}
+        {loaderElement}
+      </section>
     </section>
   );
 }
