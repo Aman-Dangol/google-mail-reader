@@ -1,6 +1,4 @@
 import type { Mail } from "@repo/shared-types/utils/api-mail-types";
-import { Separator } from "@src/components/separator/separator";
-
 import { UserAvatar } from "@src/components/userAvatar/user-avatar";
 import { MailContext } from "@src/utils/context/selected-mail-context";
 import { nameEmailParser } from "@src/utils/helpers/email-name-parser";
@@ -63,7 +61,6 @@ export const MailBox = ({ mail, index }: Props) => {
         </section>
         <p className="text-muted-text text-sm">{mailDesc}</p>
       </section>
-      {/* <Separator /> */}
     </section>
   );
 };
