@@ -13,10 +13,9 @@ export const Button = ({ type = "button", children, ...props }: Props) => {
       {...props}
       type={type}
       className={mergeClass(
-        "cursor-pointer bg-fg-primary text-bg-primary p-1 text-sm h-8 rounded-sm",
+        "bg-fg-primary text-bg-primary h-8 cursor-pointer rounded-sm p-1 text-sm",
         props.className,
-      )}
-    >
+      )}>
       {childElement}
     </button>
   );

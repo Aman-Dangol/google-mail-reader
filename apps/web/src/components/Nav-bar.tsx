@@ -4,7 +4,7 @@ import { ThemeButton } from "@src/components/theme-button/theme-button";
 export const Navbar = () => {
   return (
     <nav>
-      <section className="flex justify-between items-center">
+      <section className='flex items-center justify-between'>
         <MailTabs />
         <ThemeButton />
       </section>

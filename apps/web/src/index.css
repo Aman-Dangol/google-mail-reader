@@ -14,7 +14,7 @@
 }
 
 body {
-  @apply bg-bg-primary gap-2 text-fg-primary;
+  @apply bg-bg-primary text-fg-primary gap-2;
 }
 
 @theme {

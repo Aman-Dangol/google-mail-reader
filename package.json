@@ -22,5 +22,9 @@
     "husky": "^9.1.7",
     "turbo": "^2.6.1",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1"
   }
 }

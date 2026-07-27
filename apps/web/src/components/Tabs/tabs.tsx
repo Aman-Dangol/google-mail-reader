@@ -3,21 +3,23 @@ import { useEffect, useRef, useState } from "react";
 
 export const TabsTrigger = (props: Tabs.TabsTriggerProps) => (
   <Tabs.Trigger
-    className="h-8 w-24 rounded-md data-[state=active]:font-semibold
-     flex-1 select-none text-base  cursor-pointer hover:bg-bg-secondary "
+    className='hover:bg-bg-secondary h-8 w-24 flex-1 cursor-pointer rounded-md text-base select-none data-[state=active]:font-semibold'
     {...props}
   />
 );
 
 export const TabsContent = (props: Tabs.TabsContentProps) => (
   <Tabs.Content
-    className="grow rounded-b-md p-5 outline-none"
-    {...props}
-  ></Tabs.Content>
+    className='grow rounded-b-md p-5 outline-none'
+    {...props}></Tabs.Content>
 );
 
 export const TabsRoot = (props: Tabs.TabsProps) => (
-  <Tabs.Root className="flex flex-col " defaultValue="tab1" {...props} />
+  <Tabs.Root
+    className='flex flex-col'
+    defaultValue='tab1'
+    {...props}
+  />
 );
 
 export const TabsList = (props: Tabs.TabsListProps) => {
@@ -73,12 +75,16 @@ export const TabsList = (props: Tabs.TabsListProps) => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative">
-      <Tabs.List className="flex shrink-0" {...props} />
+    <div
+      ref={containerRef}
+      className='relative'>
+      <Tabs.List
+        className='flex shrink-0'
+        {...props}
+      />
       <div
         aria-hidden
-        className="absolute bottom-0 h-0.5 bg-fg-primary
-         rounded-full transition-all duration-300 ease-out"
+        className='bg-fg-primary absolute bottom-0 h-0.5 rounded-full transition-all duration-300 ease-out'
         style={{
           left: indicator.visible ? indicator.left : 0,
           width: indicator.visible ? indicator.width : 0,

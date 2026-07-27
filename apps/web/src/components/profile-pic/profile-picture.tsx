@@ -10,7 +10,7 @@ export const ProfilePicture = ({ userInfo }: Props) => {
       <img
         src={userInfo.picture ?? ""}
         alt={userInfo.name ?? ""}
-        className="size-10 rounded-full"
+        className='size-10 rounded-full'
       />
     </section>
   );

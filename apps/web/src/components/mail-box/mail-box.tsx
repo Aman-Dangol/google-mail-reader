@@ -41,25 +41,23 @@ export const MailBox = ({ mail, index }: Props) => {
   return (
     <section
       className={mergeClass(
-        "hover:bg-bg-secondary transition-colors duration-300 flow-root border-r border-b",
-        isSelected && "border-r-0 first:border-t border-b-0",
+        "hover:bg-bg-secondary flow-root border-r border-b transition-colors duration-300",
+        isSelected && "border-r-0 border-b-0 first:border-t",
         isAboveSelectedMail && "rounded-br-2xl",
         isBelowSelectedMail && "rounded-tr-2xl border-t",
-      )}
-    >
+      )}>
       <section
         className={mergeClass("cursor-pointer space-y-4 p-4")}
-        onClick={handleMailSelect}
-      >
-        <section className="flex items-center gap-4 ">
+        onClick={handleMailSelect}>
+        <section className='flex items-center gap-4'>
           <UserAvatar name={(name || headerFrom?.value) ?? ""} />
-          <p className="font-semibold shrink-0">{name || headerFrom?.value}</p>
+          <p className='shrink-0 font-semibold'>{name || headerFrom?.value}</p>
 
-          <p className="text-muted-text font-semibold text-sm flex-1 text-right">
+          <p className='text-muted-text flex-1 text-right text-sm font-semibold'>
             {date}
           </p>
         </section>
-        <p className="text-muted-text text-sm">{mailDesc}</p>
+        <p className='text-muted-text text-sm'>{mailDesc}</p>
       </section>
     </section>
   );

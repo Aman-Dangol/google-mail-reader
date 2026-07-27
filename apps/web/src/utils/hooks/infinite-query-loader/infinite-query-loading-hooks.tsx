@@ -36,9 +36,11 @@ export const useIniniteQueryloading = ({
   }, [fetchNextPage, hasNextPage, isFetchingNextPage]);
 
   const loaderElement = (
-    <div ref={ref} className="h-8 flex items-center justify-center">
+    <div
+      ref={ref}
+      className='flex h-8 items-center justify-center'>
       {isFetchingNextPage && (
-        <Loader2 className="animate-spin [animation-duration:2s]" />
+        <Loader2 className='animate-spin [animation-duration:2s]' />
       )}
     </div>
   );

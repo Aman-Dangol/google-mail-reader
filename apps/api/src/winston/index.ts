@@ -12,7 +12,7 @@ export const logger = winston.createLogger({
     winston.format.printf(({ level, message, timestamp }) => {
       const obj = JSON.stringify({ message, level, timestamp });
       return obj;
-    })
+    }),
   ),
 
   transports: [

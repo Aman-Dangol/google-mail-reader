@@ -14,16 +14,24 @@ export const MailTabs = () => {
   return (
     <TabsRoot defaultValue={defaultTab}>
       <TabsList>
-        <TabsTrigger value="Inbox" onClick={() => handleTabChange("Inbox")}>
+        <TabsTrigger
+          value='Inbox'
+          onClick={() => handleTabChange("Inbox")}>
           Inbox
         </TabsTrigger>
-        <TabsTrigger value="Sent" onClick={() => handleTabChange("Sent")}>
+        <TabsTrigger
+          value='Sent'
+          onClick={() => handleTabChange("Sent")}>
           Sent
         </TabsTrigger>
-        <TabsTrigger value="Drafts" onClick={() => handleTabChange("Drafts")}>
+        <TabsTrigger
+          value='Drafts'
+          onClick={() => handleTabChange("Drafts")}>
           Drafts
         </TabsTrigger>
-        <TabsTrigger value="Others" onClick={() => handleTabChange("All")}>
+        <TabsTrigger
+          value='Others'
+          onClick={() => handleTabChange("All")}>
           All
         </TabsTrigger>
       </TabsList>

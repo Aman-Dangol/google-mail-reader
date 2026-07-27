@@ -35,14 +35,18 @@ export default function MailPage() {
 
   return (
     <MailProvider>
-      <section className="overflow-auto h-full scrollbar flex">
-        <section className="flex-1">
+      <section className='scrollbar flex h-full overflow-auto'>
+        <section className='flex-1'>
           {allMails?.map((mail, index) => (
-            <MailBox mail={mail} key={mail.id} index={index} />
+            <MailBox
+              mail={mail}
+              key={mail.id}
+              index={index}
+            />
           ))}
           {loaderElement}
         </section>
-        <MailPreview className="w-[60%] sticky top-0 transition-[width] duration-500 border rounded-2xl rounded-l-none  p-4" />
+        <MailPreview className='sticky top-0 w-[60%] rounded-2xl rounded-l-none border p-4 transition-[width] duration-500' />
       </section>
     </MailProvider>
   );

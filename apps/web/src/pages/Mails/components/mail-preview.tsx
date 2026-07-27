@@ -18,8 +18,7 @@ export const MailPreview = ({ className }: Props) => {
         className,
         "border-l-0",
         !selectedMail && "w-0 overflow-hidden border-0 p-0",
-      )}
-    >
+      )}>
       {sanitizedText}
     </section>
   );

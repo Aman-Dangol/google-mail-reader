@@ -19,9 +19,9 @@ export default function Login() {
     return (
       <main>
         <header></header>
-        <section className="p-2">
+        <section className='p-2'>
           <Link to={data.url}>
-            <Button className="bg-blue-500 text-white font-medium">
+            <Button className='bg-blue-500 font-medium text-white'>
               Login With Google
             </Button>
           </Link>
