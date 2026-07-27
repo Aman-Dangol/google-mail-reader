@@ -1,0 +1,13 @@
+node_modules
+.env
+.docker.env
+
+
+generated/
+
+dist/
+
+
+**/logs
+
+pnpm-lock.yaml
