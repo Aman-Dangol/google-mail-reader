@@ -11,8 +11,9 @@ This repository is a monorepo with two app packages:
 - `pnpm build` — build all packages
 - `pnpm lint` — lint all packages
 - `pnpm check-types` — typecheck all packages
-- `pnpm web` — start only the frontend
-- `pnpm api` — start only the backend
+- `pnpm web` — access frontend module
+- `pnpm api` — access backend module
+- `pnpm pretty` — format with prettier
 
 ## Local development
 
