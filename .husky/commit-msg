@@ -1,3 +1,8 @@
+pnpm exec prettier --check . || {
+  echo ""
+  echo "the format is wrong. please run pnpm pretty"
+}
+
 pnpm exec commitlint --edit "$1" || {
   echo ""
   echo "❌ Error: Invalid commit message!"
