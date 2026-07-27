@@ -6,7 +6,7 @@ const config = {
   printWidth: 80,
   tabWidth: 2,
   useTabs: false,
-  quoteProps: "consistent",
+  quoteProps: "as-needed",
   jsxSingleQuote: true,
   trailingComma: "all",
   bracketSpacing: true,
