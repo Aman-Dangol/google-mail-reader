@@ -9,7 +9,8 @@
     "check-types": "turbo run check-types",
     "web": "pnpm --filter=web",
     "api": "pnpm --filter=api",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pretty": "prettier --write ."
   },
   "keywords": [],
   "author": "",
