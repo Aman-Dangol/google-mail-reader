@@ -55,10 +55,10 @@ body {
 }
 
 .scrollbar::-webkit-scrollbar {
-  background-color: var(--color-bg-primary);
   width: 10px;
 }
 .scrollbar::-webkit-scrollbar-thumb {
   background-color: var(--color-fg-primary);
+  margin: 20px;
   border-radius: 999px;
 }
