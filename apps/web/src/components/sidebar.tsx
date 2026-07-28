@@ -1,6 +1,7 @@
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { ProfilePicture } from "@src/components/profile-pic/profile-picture";
 import { Inbox } from "@src/icons/inbox";
+import { LogoutButton } from "@src/logout-button/logout-button";
 import { useUserInfoStore } from "@src/zustand/user-info";
 
 export const Sidebar = () => {
@@ -62,8 +63,9 @@ export const Sidebar = () => {
 
         <section
           id='footer'
-          className='bg-bg-secondary flex-1'
-        />
+          className='bg-bg-secondary flex flex-1 items-end p-2'>
+          <LogoutButton />
+        </section>
       </section>
     </aside>
   );

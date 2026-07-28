@@ -1,4 +1,10 @@
-import { authUrl, getTokens, getUserInfo, setCredentials } from "@src/auth";
+import {
+  authUrl,
+  getTokens,
+  getUserInfo,
+  revokeToken,
+  setCredentials,
+} from "@src/auth";
 import { CustomRequest } from "@src/types/customRequest";
 import { logger } from "@src/winston";
 import { Request, Response } from "express";
@@ -45,4 +51,16 @@ export const getAuth = async (
 export const getAuthUrl = (_: Request, res: Response) => {
   logger.info("new auth url sent");
   res.json({ url: authUrl });
+};
+
+export const logout = (req: Request, res: Response) => {
+  const refreshToken = req.cookies.refresh_token;
+  try {
+    revokeToken(refreshToken);
+    res.clearCookie("refresh_token");
+    res.clearCookie("access_token");
+    res.json({ message: "logout success" }).status(200);
+  } catch {
+    res.json({ message: "logout error" }).status(400);
+  }
 };

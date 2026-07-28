@@ -5,8 +5,10 @@ import { MailBox } from "@src/components/mail-box/mail-box";
 import { useIniniteQueryloading } from "@src/utils/hooks/infinite-query-loader/infinite-query-loading-hooks";
 import { MailProvider } from "@src/utils/context/selected-mail-context";
 import { MailPreview } from "@src/pages/Mails/components/mail-preview";
+import { useTheme } from "@src/utils/theme/theme";
 
 export default function MailPage() {
+  const { theme } = useTheme();
   const mailType = useContext(NavContext).currentTab;
 
   const {
