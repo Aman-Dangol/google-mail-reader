@@ -63,6 +63,15 @@ export const getUserInfo = async () => {
   return userinfo.data;
 };
 
+//for logour
+export const revokeToken = (refreshToken: string) => {
+  try {
+    oAuth2client.revokeToken(refreshToken);
+  } catch {
+    throw "error";
+  }
+};
+
 //service to work with mails
 export const mail = google.gmail({ auth: oAuth2client, version: "v1" });
 
