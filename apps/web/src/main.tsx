@@ -7,6 +7,7 @@ import { router } from "@src/router/main-router.tsx";
 import { CookiesProvider } from "react-cookie";
 import { getCurrentTheme } from "@src/utils/theme/theme";
 import { NavProvider } from "@src/utils/context/nav-context";
+import { ThemeProvider } from "@src/utils/context/theme-context";
 const qc = new QueryClient();
 
 const savedTheme = getCurrentTheme();
@@ -16,11 +17,13 @@ document.documentElement.setAttribute("data-theme", savedTheme);
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <CookiesProvider>
-      <QueryClientProvider client={qc}>
-        <NavProvider>
-          <RouterProvider router={router} />
-        </NavProvider>
-      </QueryClientProvider>
+      <ThemeProvider>
+        <QueryClientProvider client={qc}>
+          <NavProvider>
+            <RouterProvider router={router} />
+          </NavProvider>
+        </QueryClientProvider>
+      </ThemeProvider>
     </CookiesProvider>
   </StrictMode>,
 );

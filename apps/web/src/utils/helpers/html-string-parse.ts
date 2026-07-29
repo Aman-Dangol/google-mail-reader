@@ -1,8 +1,5 @@
-import { getCurrentTheme } from "@src/utils/theme/theme";
-
 // todo: extract bg colors from prefers-color-scheme and apply them according to apps theme mode
-export const parseHTMLString = (htmlContent: string) => {
-  const theme = getCurrentTheme();
+export const parseHTMLString = (htmlContent: string, theme: string) => {
   const parser = new DOMParser();
   const doc = parser.parseFromString(htmlContent, "text/html");
 

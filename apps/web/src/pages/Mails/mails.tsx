@@ -5,11 +5,11 @@ import { MailBox } from "@src/components/mail-box/mail-box";
 import { useIniniteQueryloading } from "@src/utils/hooks/infinite-query-loader/infinite-query-loading-hooks";
 import { MailProvider } from "@src/utils/context/selected-mail-context";
 import { MailPreview } from "@src/pages/Mails/components/mail-preview";
-import { useTheme } from "@src/utils/theme/theme";
+import { ThemeContext } from "@src/utils/context/theme-context";
 
 export default function MailPage() {
-  const { theme } = useTheme();
   const mailType = useContext(NavContext).currentTab;
+  const { currentTheme } = useContext(ThemeContext);
 
   const {
     data: mailsReponse,
@@ -48,7 +48,7 @@ export default function MailPage() {
           ))}
           {loaderElement}
         </section>
-        <MailPreview />
+        <MailPreview key={currentTheme} />
       </section>
     </MailProvider>
   );

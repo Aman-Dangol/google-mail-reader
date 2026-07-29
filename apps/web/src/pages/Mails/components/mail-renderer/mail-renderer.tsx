@@ -1,8 +1,9 @@
 import { MailContext } from "@src/utils/context/selected-mail-context";
+import { ThemeContext } from "@src/utils/context/theme-context";
 import { parseHTMLString } from "@src/utils/helpers/html-string-parse";
 import { snippetTextParser } from "@src/utils/helpers/snippet-text-parser";
 import { mergeClass } from "@src/utils/tailwind-class-merge/classMerge";
-import { useContext, type HTMLAttributes } from "react";
+import { useContext, useMemo, type HTMLAttributes } from "react";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   htmlContent?: string;
@@ -15,6 +16,12 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
  */
 export const MailRenderer = ({ htmlContent, className }: Props) => {
   const { selectedMailData } = useContext(MailContext);
+  const { currentTheme } = useContext(ThemeContext);
+
+  const parsedHtml = useMemo(
+    () => parseHTMLString(htmlContent ?? "", currentTheme),
+    [htmlContent, currentTheme],
+  );
 
   const sanitizedText = snippetTextParser(
     selectedMailData?.selectedMail.snippet ?? "",
@@ -23,8 +30,6 @@ export const MailRenderer = ({ htmlContent, className }: Props) => {
   if (!htmlContent) {
     return <section className={className}>{sanitizedText}</section>;
   }
-
-  const parsedHtml = parseHTMLString(htmlContent);
 
   return (
     <section
