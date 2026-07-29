@@ -5,7 +5,7 @@ import { mergeClass } from "@src/utils/tailwind-class-merge/classMerge";
 import { useContext, type HTMLAttributes } from "react";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  htmlContent: string;
+  htmlContent?: string;
 }
 
 /**
@@ -21,29 +21,23 @@ export const MailRenderer = ({ htmlContent, className }: Props) => {
   );
 
   if (!htmlContent) {
-    return (
-      <section
-        className={mergeClass(
-          className,
-          "scrollbar **:text-fg-primary overflow-auto",
-          !selectedMailData?.selectedMail && "w-0 overflow-hidden border-0 p-0",
-        )}>
-        {sanitizedText}
-      </section>
-    );
+    return <section className={className}>{sanitizedText}</section>;
   }
 
   const parsedHtml = parseHTMLString(htmlContent);
 
   return (
-    <iframe
+    <section
       className={mergeClass(
         className,
         "scrollbar overflow-auto",
         !selectedMailData?.selectedMail && "w-0 overflow-hidden border-0 p-0",
-      )}
-      referrerPolicy='no-referrer'
-      srcDoc={parsedHtml}
-    />
+      )}>
+      <iframe
+        className='h-full w-full'
+        referrerPolicy='no-referrer'
+        srcDoc={parsedHtml}
+      />
+    </section>
   );
 };

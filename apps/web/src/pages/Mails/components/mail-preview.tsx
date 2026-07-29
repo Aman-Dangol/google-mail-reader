@@ -23,7 +23,12 @@ export const MailPreview = ({ className }: Props) => {
     return (
       <MailRenderer
         htmlContent={decodedData}
-        className={className}
+        className={mergeClass(
+          "sticky top-0 w-[60%] rounded-2xl rounded-l-none border border-l-0 transition-[width] duration-500",
+          "scrollbar **:text-fg-primary overflow-auto",
+          !selectedMail && "w-0 overflow-hidden border-0 p-0",
+          className,
+        )}
       />
     );
   }
@@ -37,21 +42,24 @@ export const MailPreview = ({ className }: Props) => {
     return (
       <MailRenderer
         htmlContent={decodedHtml}
-        className={className}
+        className={mergeClass(
+          "sticky top-0 w-[60%] rounded-2xl rounded-l-none border border-l-0 transition-[width] duration-500",
+          "scrollbar **:text-fg-primary overflow-auto",
+          !selectedMail && "w-0 overflow-hidden border-0 p-0",
+          className,
+        )}
       />
     );
   }
 
-  const sanitizedText = snippetTextParser(selectedMail?.snippet ?? "");
-
   return (
-    <section
+    <MailRenderer
       className={mergeClass(
-        className,
+        "sticky top-0 w-[60%] rounded-2xl rounded-l-none border border-l-0 transition-[width] duration-500",
         "scrollbar **:text-fg-primary overflow-auto",
         !selectedMail && "w-0 overflow-hidden border-0 p-0",
-      )}>
-      {sanitizedText}
-    </section>
+        className,
+      )}
+    />
   );
 };

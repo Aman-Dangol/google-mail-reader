@@ -48,7 +48,7 @@ export default function MailPage() {
           ))}
           {loaderElement}
         </section>
-        <MailPreview className='sticky top-0 w-[60%] rounded-2xl rounded-l-none border border-l-0 transition-[width] duration-500' />
+        <MailPreview />
       </section>
     </MailProvider>
   );
