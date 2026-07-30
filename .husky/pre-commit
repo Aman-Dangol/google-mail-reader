@@ -1,5 +1,10 @@
 echo "runnning prettier"
 
+pnpm lint || {
+  echo "lint failed"
+  exit 1
+}
+
 
 pnpm exec prettier --check . || {
   echo ""
