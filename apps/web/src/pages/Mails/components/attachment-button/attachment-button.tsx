@@ -1,9 +1,6 @@
 import { Button } from "@src/components/button";
 import { MailContext } from "@src/utils/context/selected-mail-context";
-import {
-  decodeGoogleBase64Bytes,
-  handleDownloadGoogleBase64String,
-} from "@src/utils/helpers/decode";
+import { handleDownloadGoogleBase64String } from "@src/utils/helpers/decode";
 import { useGetAttachmentByID } from "@src/utils/hooks/query-hooks/get-attachment-by-id";
 import type { AttachmentData } from "@src/utils/types/attachment-types";
 import { useContext } from "react";
