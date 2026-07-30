@@ -21,7 +21,6 @@ const oauth2 = google.oauth2({
 
 const Scopes = [
   "https://mail.google.com/",
-  "openid",
   "https://www.googleapis.com/auth/userinfo.email",
   "https://www.googleapis.com/auth/userinfo.profile",
 ];
@@ -32,8 +31,8 @@ google.options({
 
 const url = oAuth2client.generateAuthUrl({
   access_type: "offline",
-  prompt: "consent",
   scope: Scopes,
+  prompt: "consent",
 });
 
 /**
