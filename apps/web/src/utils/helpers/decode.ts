@@ -7,7 +7,7 @@ export const decodeGoogleBase64 = (encoded: string) => {
   const toDecode = Uint8Array.from(atob(santinitized), (c) => c.charCodeAt(0));
   return new TextDecoder("utf-8").decode(toDecode);
 };
-console.log("object");
+
 export const decodeGoogleBase64Bytes = (
   encoded: string,
 ): Uint8Array<ArrayBuffer> => {
