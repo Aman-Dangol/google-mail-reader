@@ -1,5 +1,4 @@
 import { Request } from "express";
-import { ParsedUrlQuery } from "querystring";
 
 interface requestprops {
   body?: object;
