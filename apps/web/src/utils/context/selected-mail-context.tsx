@@ -8,7 +8,7 @@ interface SelectedMailProps {
 
 export const MailContext = createContext<{
   selectedMailData?: SelectedMailProps;
-  setSelectedMail: (props: SelectedMailProps) => void;
+  setSelectedMail: (props?: SelectedMailProps) => void;
 }>({ setSelectedMail: () => {} });
 
 export const MailProvider = ({ children }: { children: ReactNode }) => {
