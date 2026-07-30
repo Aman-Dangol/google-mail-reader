@@ -13,9 +13,6 @@ export const config = [
   eslintConfigPrettier,
   ...tseslint.configs.recommended,
   {
-    ignores: ["generated/prisma"],
-  },
-  {
     plugins: {
       turbo: turboPlugin,
     },
@@ -25,6 +22,6 @@ export const config = [
     },
   },
   {
-    ignores: ["dist/**"],
+    ignores: ["dist/**", "generated/prisma"],
   },
 ];
