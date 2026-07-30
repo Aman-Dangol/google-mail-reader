@@ -3,19 +3,21 @@ import { ParsedUrlQuery } from "querystring";
 
 interface requestprops {
   body?: object;
-  query?: ParsedUrlQuery;
-  params?: Record<string, string>;
+  query?: object;
+  params?: object;
   locals?: Record<string, unknown>;
   cookies?: object;
 }
 
 type CustomRequest<C extends requestprops = Record<string, unknown>> = Request<
-  C["params"] extends Record<string, string>
-    ? C["params"]
+  C["params"] extends object
+    ? C["params"] & Record<string, unknown>
     : Record<string, unknown>,
   unknown,
   C["body"] extends object ? C["body"] : Record<string, unknown>,
-  C["query"] extends ParsedUrlQuery ? C["query"] : Record<string, unknown>,
+  C["query"] extends object
+    ? C["query"] & Record<string, unknown>
+    : Record<string, unknown>,
   C["locals"] extends Record<string, unknown>
     ? C["locals"]
     : Record<string, unknown>

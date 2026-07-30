@@ -7,13 +7,13 @@ interface Props extends ComponentProps<"button"> {
 
 export const Button = ({ type = "button", children, ...props }: Props) => {
   const childElement =
-    typeof children === "string" ? <span>{children}</span> : children;
+    typeof children === "string" ? <>{children}</> : children;
   return (
     <button
       {...props}
       type={type}
       className={mergeClass(
-        "bg-fg-primary text-bg-primary h-8 cursor-pointer rounded-sm p-1 text-sm",
+        "bg-bg-secondary text-bg-primary h-8 cursor-pointer rounded-sm p-1 text-sm",
         props.className,
       )}>
       {childElement}
