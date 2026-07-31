@@ -35,4 +35,4 @@ This repository is a monorepo with two app packages:
    pnpm dev
    ```
 
-The frontend proxies `/api` requests to the backend at `http://127.0.0.1:8000`.
+The frontend proxies `/api` requests to the backend.
