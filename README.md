@@ -5,6 +5,13 @@ This repository is a monorepo with two app packages:
 - `apps/api` — Express backend
 - `apps/web` — React frontend using Vite
 
+## Initial Requirements
+
+- setup google console cloud and get oauth2 credentials
+- add scopes data access scope from mail.google.com, userinfo.email and userinfo.profile
+- add the gmail account u want to use as a test user if its in testing mode
+- ensure redirect url matches ur frontend's homepage url
+
 ## Root scripts
 
 - `pnpm dev` — run both frontend and backend in parallel
