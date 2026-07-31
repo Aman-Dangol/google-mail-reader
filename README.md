@@ -7,7 +7,7 @@ This repository is a monorepo with two app packages:
 
 ## Initial Requirements
 
-- setup google console cloud and get oauth2 credentials
+- setup google console cloud project and get oauth2 credentials
 - add scopes in data access scope for mail.google.com, userinfo.email and userinfo.profile
 - add the gmail account you want to use as a test user if its in testing mode
 - ensure redirect url matches ur frontend's homepage url
