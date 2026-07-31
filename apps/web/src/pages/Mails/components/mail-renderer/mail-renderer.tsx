@@ -1,3 +1,4 @@
+import { AttachmentBox } from "@src/pages/Mails/components/attachment-box/attachment-box";
 import { MailContext } from "@src/utils/context/selected-mail-context";
 import { ThemeContext } from "@src/utils/context/theme-context";
 import { parseHTMLString } from "@src/utils/helpers/html-string-parse";
@@ -38,6 +39,7 @@ export const MailRenderer = ({ htmlContent, className }: Props) => {
         "scrollbar overflow-auto",
         !selectedMailData?.selectedMail && "w-0 overflow-hidden border-0 p-0",
       )}>
+      <AttachmentBox />
       <iframe
         className='h-full w-full'
         referrerPolicy='no-referrer'

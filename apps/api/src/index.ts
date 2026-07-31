@@ -5,6 +5,7 @@ import cors from "cors";
 import { AuthRouter } from "@src/routes/auth-routes/auth-route";
 import { UserRouter } from "@src/routes/user-routes/user-route";
 import { MailRouter } from "@src/routes/mail-routes/mail-routes";
+import { AttachmentRoutes } from "@src/routes/attachment-routes/attachment-routes";
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(
 app.use("/auth", AuthRouter);
 app.use("/mails", MailRouter);
 app.use("/users", UserRouter);
+app.use("/attachments", AttachmentRoutes);
 
 console.info("API server listening on port 8000");
 

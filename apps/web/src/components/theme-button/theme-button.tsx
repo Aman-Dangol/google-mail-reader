@@ -17,7 +17,9 @@ export const ThemeButton = () => {
 
   const DisplayIcon = currentTheme === "dark" ? Sun : Moon;
   return (
-    <Button onClick={handleClick}>
+    <Button
+      onClick={handleClick}
+      className='bg-fg-primary!'>
       {<DisplayIcon className={iconClassName} />}
     </Button>
   );

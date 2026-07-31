@@ -12,7 +12,7 @@ export const MailActions = () => {
   const CloseButton = (
     <Button
       onClick={handleClose}
-      className='size-6'>
+      className='bg-fg-primary size-6'>
       <X className='stroke-bg-secondary size-4' />
     </Button>
   );

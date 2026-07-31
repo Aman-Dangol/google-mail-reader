@@ -1,6 +1,7 @@
 import { gmail_v1, google } from "googleapis";
 import { oAuth2client } from "../auth";
 import { MailType } from "@repo/shared-types/utils/api-mail-types";
+import { AttachmentRequestQueryParams } from "@repo/shared-types/api/get-attachment";
 
 export const GmailService = google.gmail({ auth: oAuth2client, version: "v1" });
 
@@ -40,6 +41,19 @@ export const getSingleMail = async (id: string) => {
     userId: "me",
     id,
     format: "metadata",
+  });
+
+  return res.data;
+};
+
+export const fetchAttachmentByID = async ({
+  id,
+  messageID,
+}: AttachmentRequestQueryParams) => {
+  const res = await GmailService.users.messages.attachments.get({
+    id,
+    messageId: messageID,
+    userId: "me",
   });
 
   return res.data;
