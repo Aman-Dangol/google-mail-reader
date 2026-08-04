@@ -40,20 +40,40 @@ export const handleDownloadGoogleBase64String = ({
 };
 
 export const getDecodedHtml = (payload?: Mail["payload"]): string => {
-  if (!payload) return "";
+  let fallBack = "";
 
-  if (payload.mimeType === MIME_TYPES.HTML) {
-    return decodeGoogleBase64(payload.body?.data ?? "");
+  if (payload?.body?.data) {
+    const decoded = decodeGoogleBase64(payload.body.data);
+
+    if (payload.mimeType === MIME_TYPES.PLAIN)
+      return `<pre  style="
+    white-space: pre-wrap; font-family: inherit">${decoded}</pre>`;
+
+    return decoded;
   }
+  const getNestedHtml = (payload: Mail["payload"]): string => {
+    if (!payload) return "";
 
-  if (payload.parts?.length) {
-    for (const part of payload.parts) {
-      const html = getDecodedHtml(part);
+    if (payload.mimeType === MIME_TYPES.HTML) {
+      return decodeGoogleBase64(payload.body?.data ?? "");
+    }
+    if (payload.mimeType === MIME_TYPES.PLAIN) {
+      fallBack = decodeGoogleBase64(payload.body?.data ?? "");
+    }
 
-      if (html) {
-        return html;
+    if (payload.parts?.length) {
+      for (const part of payload.parts) {
+        const html = getNestedHtml(part);
+
+        if (html) {
+          return html;
+        }
       }
     }
-  }
-  return "";
+
+    return "";
+  };
+
+  const data = getNestedHtml(payload);
+  return data || fallBack;
 };

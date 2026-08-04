@@ -10,7 +10,8 @@
     "web": "pnpm --filter=web",
     "api": "pnpm --filter=api",
     "prepare": "husky install",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "test": "turbo run test"
   },
   "keywords": [],
   "author": "",
@@ -21,9 +22,10 @@
     "@commitlint/config-conventional": "^21.0.2",
     "eslint": "^9.39.1",
     "husky": "^9.1.7",
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "turbo": "^2.6.1",
     "typescript": "^5.9.3",
-    "prettier": "^3.9.6",
-    "prettier-plugin-tailwindcss": "^0.8.1"
+    "vitest": "^4.1.10"
   }
 }
