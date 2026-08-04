@@ -21,6 +21,7 @@ This repository is a monorepo with two app packages:
 - `pnpm web` — access frontend module
 - `pnpm api` — access backend module
 - `pnpm pretty` — format with prettier
+- `pnpm test` — run test for backend and frontend
 
 ## Local development
 
