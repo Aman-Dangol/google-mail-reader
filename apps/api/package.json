@@ -8,7 +8,7 @@
     "dev": "dotenvx run -- tsx watch src/index.ts",
     "check-types": "tsc",
     "build": "tsup",
-    "lint": "eslint ."
+    "lint": "eslint"
   },
   "keywords": [],
   "author": "",
