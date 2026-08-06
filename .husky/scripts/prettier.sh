@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo "🎨 Running Prettier... chuck noris"
+echo "🎨 Running Prettier..."
 pnpm exec prettier --check "$@" || {
   echo ""
   echo "❌ Prettier check failed."
