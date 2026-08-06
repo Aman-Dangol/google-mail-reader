@@ -1,6 +1,8 @@
+import type { Mail } from "@repo/shared-types/utils/api-mail-types";
 import {
   decodeGoogleBase64,
   decodeGoogleBase64Bytes,
+  getDecodedHtml,
   handleDownloadGoogleBase64String,
 } from "@src/utils/helpers/decode";
 import { describe, test, expect, vi, beforeEach, afterEach } from "vitest";
@@ -87,5 +89,29 @@ describe("handleDownloadGoogleBase64String", () => {
     expect(decodedText).toBe(original);
 
     expect(revokeObjectURLSpy).toHaveBeenCalledWith("blob:mock-url");
+  });
+});
+
+describe("returns a decoded html string", () => {
+  const text = "hello world ☠️";
+  const encoded = new TextEncoder().encode(text);
+  const url = btoa(String.fromCharCode(...encoded))
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_");
+
+  test("returns a plain text wrrapped in pre tag", () => {
+    const mailPayload: Mail["payload"] = {
+      body: {
+        data: url,
+        size: encoded.byteLength,
+      },
+      mimeType: "text/plain",
+    };
+
+    const data = getDecodedHtml(mailPayload);
+    const expected = `<pre  style="
+    white-space: pre-wrap; font-family: inherit">${text}</pre>`;
+
+    expect(data).toBe(expected);
   });
 });
