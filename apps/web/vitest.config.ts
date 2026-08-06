@@ -8,7 +8,9 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./src/tests/setup.ts",
+    reporters: ["verbose"],
   },
+
   resolve: {
     alias: {
       "@src": path.resolve("./src/"),

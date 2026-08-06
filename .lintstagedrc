@@ -1,0 +1,7 @@
+{
+  "*.{test.ts,ts,spec.ts}": "pnpm run test -- -- --run --related",
+  "*.{ts,tsx,md,yaml,json}": [
+    ".husky/scripts/prettier.sh",
+    ".husky/scripts/lint.sh"
+  ]
+}

@@ -12,9 +12,9 @@ export const decodeGoogleBase64Bytes = (
   encoded: string,
 ): Uint8Array<ArrayBuffer> => {
   const sanitized = encoded.replace(/-/g, "+").replace(/_/g, "/");
-  const bytes = Uint8Array.from(atob(sanitized), (c) => c.charCodeAt(0));
+  const bytesss = Uint8Array.from(atob(sanitized), (c) => c.charCodeAt(0));
 
-  return bytes;
+  return bytesss;
 };
 
 export const handleDownloadGoogleBase64String = ({
