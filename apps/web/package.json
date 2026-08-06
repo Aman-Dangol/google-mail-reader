@@ -10,7 +10,6 @@
     "test": "vitest",
     "test:run": "vitest run",
     "lint": "eslint",
-    "lint:check": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
