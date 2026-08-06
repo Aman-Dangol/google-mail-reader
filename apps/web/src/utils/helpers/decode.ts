@@ -31,6 +31,7 @@ export const handleDownloadGoogleBase64String = ({
   );
 
   const link = document.createElement("a");
+
   link.href = url;
   link.download = fileName ?? "attachment";
   document.body.appendChild(link);
