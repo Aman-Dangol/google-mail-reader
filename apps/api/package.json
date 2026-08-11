@@ -8,6 +8,7 @@
     "dev": "dotenvx run -- tsx watch src/index.ts",
     "check-types": "tsc",
     "build": "tsup",
+    "build:start": "node ./dist/index.js",
     "lint": "eslint"
   },
   "keywords": [],
