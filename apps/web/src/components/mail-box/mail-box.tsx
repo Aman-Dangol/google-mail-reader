@@ -27,7 +27,7 @@ export const MailBox = ({ mail, index }: Props) => {
 
   const { selectedIndex, selectedMail } = selectedMailData ?? {};
 
-  const markAsRead = useMarkAsread();
+  const markAsRead = useMarkAsread(mail.id ?? "");
 
   const headerFrom = getMailHeader(mail, "from");
   const headerSubject = getMailHeader(mail, "subject");
@@ -39,11 +39,6 @@ export const MailBox = ({ mail, index }: Props) => {
 
   const date = formatDate(mail.internalDate ?? "");
 
-  const handleMailSelect = () => {
-    if (mail.id) markAsRead(mail.id);
-    setSelectedMail({ selectedMail: mail, selectedIndex: index });
-  };
-
   const isSelected = selectedMail?.id === mail.id;
   const hasSelection = typeof selectedIndex === "number";
 
@@ -51,6 +46,13 @@ export const MailBox = ({ mail, index }: Props) => {
   const isBelowSelectedMail = hasSelection && selectedIndex + 1 === index;
 
   const notRead = isUnRead(mail.labelIds ?? []);
+
+  const handleMailSelect = () => {
+    if (mail.id && notRead) {
+      markAsRead();
+    }
+    setSelectedMail({ selectedMail: mail, selectedIndex: index });
+  };
 
   return (
     <section

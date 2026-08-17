@@ -70,3 +70,15 @@ export const archiveMail = async (mailId: string) => {
 
   return res.data;
 };
+
+export const markAsRead = async (mailId: string) => {
+  const res = await GmailService.users.messages.modify({
+    userId: "me",
+    id: mailId,
+    requestBody: {
+      removeLabelIds: ["UNREAD"],
+    },
+  });
+
+  return res.data;
+};
