@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Gmail full stack app",
   "scripts": {
-    "dev": "turbo run dev --parallel",
+    "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",
