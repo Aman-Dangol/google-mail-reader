@@ -71,11 +71,7 @@ export const MailBox = ({ mail, index }: Props) => {
           <UserAvatar name={(name || headerFrom?.value) ?? ""} />
           <section className='min-w-0 flex-1'>
             <section className='flex flex-1 justify-between'>
-              <p
-                className={mergeClass(
-                  "truncate font-semibold",
-                  selectedMail?.id && "w-60",
-                )}>
+              <p className={mergeClass("truncate font-semibold")}>
                 {name || headerFrom?.value}
               </p>
 
@@ -85,8 +81,7 @@ export const MailBox = ({ mail, index }: Props) => {
             </section>
             <p
               className={mergeClass(
-                "text-muted-text min-w-0 truncate text-sm text-nowrap",
-                selectedMail?.id && "w-50",
+                "text-muted-text min-w-0 truncate overflow-hidden text-sm",
               )}>
               {mailDesc}
             </p>
