@@ -8,7 +8,7 @@ describe("retuns initials of a name", () => {
   });
 
   it("returns first and last name initals", () => {
-    const name = "Test User";
+    const name = "Test Userino";
 
     expect(getInitials(name)).toBe("TU");
   });
