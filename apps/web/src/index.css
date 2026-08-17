@@ -11,6 +11,7 @@
   --color-bg-secondary: #f6f6f6; /* f9f9f9*/
   --color-fg-primary: #020202;
   --color-muted-text: #818181;
+  --color-highlight: #2a78d6;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
   --color-bg-secondary: var(--color-bg-secondary);
   --color-fg-primary: var(--color-fg-primary);
   --color-muted-text: var(--color-muted-text);
+  --color-highlight: var(--color-highlight);
 }
 
 [data-theme="dark"] {

@@ -10,6 +10,7 @@ const app = express.Router();
 
 app.get("/getmails", credentialSetter, getMails);
 
+app.post("/archive/:id", credentialSetter);
 app.get("/:id", credentialSetter, getMailById);
 
 export { app as MailRouter };
