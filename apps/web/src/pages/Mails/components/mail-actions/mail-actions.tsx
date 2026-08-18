@@ -52,13 +52,17 @@ export const MailActions = () => {
     </Button>
   );
 
-  const ArchiveButton = (
+  const ArchiveButton = selectedMailData?.selectedMail.labelIds?.find(
+    (el) => el.toLowerCase() === "inbox",
+  ) ? (
     <Button
       className='bg-fg-primary size-6'
       title='archive'
       onClick={handleArchive}>
       <Archive className='size-4 stroke-red-600' />
     </Button>
+  ) : (
+    <></>
   );
 
   return (
