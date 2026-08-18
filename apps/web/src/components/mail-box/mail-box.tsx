@@ -75,7 +75,7 @@ export const MailBox = ({ mail, index }: Props) => {
                 {name || headerFrom?.value}
               </p>
 
-              <p className='text-muted-text flex-1 text-right text-sm font-semibold text-nowrap'>
+              <p className='text-muted-text flex-1 text-right text-xs font-semibold text-nowrap'>
                 {date}
               </p>
             </section>
