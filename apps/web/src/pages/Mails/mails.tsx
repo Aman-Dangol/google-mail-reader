@@ -38,7 +38,7 @@ export default function MailPage() {
   return (
     <MailProvider>
       <section className='scrollbar flex h-full overflow-auto'>
-        <section className='flex-1'>
+        <section className='min-w-0 flex-1'>
           {allMails?.map((mail, index) => (
             <MailBox
               mail={mail}

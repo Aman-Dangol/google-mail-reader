@@ -3,6 +3,7 @@ import {
   getMailById,
   getMails,
 } from "@src/routes/mail-routes/controllers/mails.get";
+import { markAsRead } from "@src/routes/mail-routes/controllers/mails.post";
 
 import express from "express";
 
@@ -10,6 +11,7 @@ const app = express.Router();
 
 app.get("/getmails", credentialSetter, getMails);
 
+app.post("/mark-as-read", credentialSetter, markAsRead);
 app.get("/:id", credentialSetter, getMailById);
 
 export { app as MailRouter };
