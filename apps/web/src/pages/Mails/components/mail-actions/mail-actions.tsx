@@ -1,14 +1,49 @@
 import { Button } from "@src/components/button";
 import { MailContext } from "@src/utils/context/selected-mail-context";
-import { X } from "lucide-react";
+import { usePostArhiveMail } from "@src/utils/hooks/query-hooks/archive-mail";
+import { Archive, X } from "lucide-react";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 export const MailActions = () => {
-  const { setSelectedMail } = useContext(MailContext);
+  const { setSelectedMail, selectedMailData } = useContext(MailContext);
+  const { mutateAsync: archiveMail } = usePostArhiveMail();
 
   const handleClose = () => {
     setSelectedMail(undefined);
   };
+
+  const handleArchive = () => {
+    const mailId = selectedMailData?.selectedMail.id;
+    if (!mailId) return;
+
+    const toastId = toast.loading("Archiving mail...");
+
+    archiveMail(
+      { body: { mailId } },
+      {
+        onSuccess: () => {
+          toast.update(toastId, {
+            render: "Mail archived successfully!",
+            type: "success",
+            isLoading: false,
+            autoClose: 3000,
+            draggable: true,
+          });
+        },
+        onError: () => {
+          toast.update(toastId, {
+            render: "Failed to archive mail",
+            type: "error",
+            isLoading: false,
+            autoClose: 3000,
+            draggable: true,
+          });
+        },
+      },
+    );
+  };
+
   const CloseButton = (
     <Button
       onClick={handleClose}
@@ -17,5 +52,18 @@ export const MailActions = () => {
     </Button>
   );
 
-  return <section className='flex justify-end p-2'>{CloseButton}</section>;
+  const ArchiveButton = (
+    <Button
+      className='bg-fg-primary size-6'
+      title='archive'
+      onClick={handleArchive}>
+      <Archive className='size-4 stroke-red-600' />
+    </Button>
+  );
+
+  return (
+    <section className='flex justify-end gap-2 p-2'>
+      {CloseButton} {ArchiveButton}
+    </section>
+  );
 };

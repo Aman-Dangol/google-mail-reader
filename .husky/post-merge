@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+
+
+if git diff --name-only HEAD@{1} HEAD |
+  grep -Eq '(^|/)package\.json$|^pnpm-lock\.yaml$'
+then
+  echo "Dependency files changed after merge. Running pnpm install..."
+  pnpm i
+fi

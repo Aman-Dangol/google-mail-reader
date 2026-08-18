@@ -8,6 +8,7 @@ import { CookiesProvider } from "react-cookie";
 import { getCurrentTheme } from "@src/utils/theme/theme";
 import { NavProvider } from "@src/utils/context/nav-context";
 import { ThemeProvider } from "@src/utils/context/theme-context";
+import { ToastContainer } from "react-toastify";
 const qc = new QueryClient();
 
 const savedTheme = getCurrentTheme();
@@ -21,6 +22,14 @@ createRoot(document.getElementById("root")!).render(
         <QueryClientProvider client={qc}>
           <NavProvider>
             <RouterProvider router={router} />
+            <ToastContainer
+              position='bottom-right'
+              draggable
+              autoClose={3000}
+              pauseOnHover
+              draggablePercent={50}
+              theme={savedTheme}
+            />
           </NavProvider>
         </QueryClientProvider>
       </ThemeProvider>
