@@ -26,6 +26,8 @@ export default function MailPage() {
     isFetchingNextPage,
   });
 
+  const allMails = mailsReponse?.pages.flatMap((data) => data.data);
+
   if (isError) {
     return <div>error</div>;
   }
@@ -33,10 +35,8 @@ export default function MailPage() {
     return <div>content is Loading</div>;
   }
 
-  const allMails = mailsReponse?.pages.flatMap((data) => data.data);
-
   return (
-    <MailProvider>
+    <MailProvider mails={allMails}>
       <section className='scrollbar flex h-full overflow-auto'>
         <section className='min-w-0 flex-1'>
           {allMails?.map((mail, index) => (

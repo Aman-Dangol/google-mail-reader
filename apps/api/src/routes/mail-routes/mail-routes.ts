@@ -6,6 +6,7 @@ import {
 import {
   archiveMail,
   markAsRead,
+  unarchiveMail,
 } from "@src/routes/mail-routes/controllers/mails.post";
 
 import express from "express";
@@ -16,6 +17,7 @@ app.get("/getmails", credentialSetter, getMails);
 
 app.post("/mark-as-read", credentialSetter, markAsRead);
 app.post("/archive-mail", credentialSetter, archiveMail);
+app.post("/unarchive-mail", credentialSetter, unarchiveMail);
 app.get("/:id", credentialSetter, getMailById);
 
 export { app as MailRouter };
