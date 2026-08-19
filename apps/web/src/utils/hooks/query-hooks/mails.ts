@@ -15,6 +15,7 @@ export const useGetAllMailInfiniteQuery = (mailType: MailType) =>
       });
       return response.data;
     },
+
     initialPageParam: "",
     getNextPageParam: (lastPage) => lastPage.nextPageToken,
   });

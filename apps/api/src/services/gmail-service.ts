@@ -71,6 +71,18 @@ export const archiveMail = async (mailId: string) => {
   return res.data;
 };
 
+export const unArchiveMail = async (mailId: string) => {
+  const res = await GmailService.users.messages.modify({
+    userId: "me",
+    id: mailId,
+    requestBody: {
+      addLabelIds: ["INBOX"],
+    },
+  });
+
+  return res.data;
+};
+
 export const markAsRead = async (mailId: string) => {
   const res = await GmailService.users.messages.modify({
     userId: "me",

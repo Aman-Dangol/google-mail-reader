@@ -81,7 +81,7 @@ export const MailBox = ({ mail, index }: Props) => {
             </section>
             <p
               className={mergeClass(
-                "text-muted-text min-w-0 truncate overflow-hidden text-sm",
+                "text-muted-text min-w-0 truncate overflow-hidden text-xs",
               )}>
               {mailDesc}
             </p>
