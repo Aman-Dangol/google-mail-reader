@@ -23,13 +23,13 @@ export const MailActions = () => {
   const labelIds = selectedMailData?.selectedMail.labelIds ?? [];
 
   const hasInbox = labelIds.some((label) => label.toLowerCase() === "inbox");
-
   const hasDrafts = labelIds.some((label) => label.toLowerCase() === "draft");
+  const hasSent = labelIds.some((label) => label.toLowerCase() === "sent");
 
   const ArchiveToggleButton =
     hasInbox && !hasDrafts ? (
       <ArchiveButton />
-    ) : !hasInbox && !hasDrafts ? (
+    ) : !hasInbox && !hasDrafts && !hasSent ? (
       <UnArchiveButton />
     ) : null;
 
