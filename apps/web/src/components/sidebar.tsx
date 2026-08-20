@@ -1,7 +1,7 @@
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { LogoutButton } from "@src/components/logout-button/logout-button";
 import { ProfilePicture } from "@src/components/profile-pic/profile-picture";
 import { Inbox } from "@src/icons/inbox";
-import { LogoutButton } from "@src/logout-button/logout-button";
 import { useUserInfoStore } from "@src/zustand/user-info";
 
 export const Sidebar = () => {
