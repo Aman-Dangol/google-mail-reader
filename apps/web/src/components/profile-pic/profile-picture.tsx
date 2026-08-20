@@ -8,6 +8,7 @@ export const ProfilePicture = ({ userInfo }: Props) => {
   return (
     <section>
       <img
+        referrerPolicy='no-referrer'
         src={userInfo.picture ?? ""}
         alt={userInfo.name ?? ""}
         className='size-10 rounded-full'
